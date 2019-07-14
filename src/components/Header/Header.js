@@ -1,28 +1,36 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import './style.scss';
 
+import * as actions from '../../actions/index';
+
 class Header extends Component {
+    onLogOut = () => {
+        this.props.logoutAction();
+        return <Redirect to='/'/>
+    }
+
     renderUserDetail = () => {
         const {user} = this.props;
         const detail = user ? 
             <ul>
-                <li>Add credits</li>
-                <li>Credits</li>
+               <li><Link
+                    to='/booking'
+                >My Bookings </Link></li> 
                 <li>
-                    <a href="/api/logout">Logout</a>
+                    <a onClick={this.onLogOut}>Logout</a>
                 </li>
             </ul> : 
             <ul>
                 <li>
-                    <a href="/login" >
-                        Sign Up
-                    </a>
-                    <a href="/signin" >
-                        Sign Up
-                    </a>
+                <Link
+                    to='/login'
+                >Login </Link>
+                    <Link
+                    to='/signin'
+                >Sign in  </Link>
                 </li>
             </ul>;
         return detail;
@@ -43,9 +51,14 @@ class Header extends Component {
         )
     }
 }
+
 const  mapStateToProps = (state) => {
     return {
         user: state.user
     }
 }
-export default connect(mapStateToProps)(Header);
+
+const mapDispachToProps = {
+    logoutAction: actions.logOut
+}
+export default connect(mapStateToProps, mapDispachToProps)(Header);

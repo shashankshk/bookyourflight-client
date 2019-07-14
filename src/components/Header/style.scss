@@ -11,11 +11,16 @@
         height: 100%;
         margin-top: auto;
         margin-bottom: auto;
+        a{
+            text-decoration: none;
+        }
         h2{
             height: 100%;
             text-align: center;
             margin: auto 10px;
             line-height: 50px;
+            text-decoration: none;
+            color: white;
         }
     }
     .sign-in {

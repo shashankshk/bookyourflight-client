@@ -1,0 +1,41 @@
+.flight-table-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .sort-container{
+        display: flex;
+        justify-content: center;
+        margin: 10px 0;
+    }
+    .flight-info-container {
+        margin: 10px 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        background-color: rgb(226, 226, 226);
+        div{
+            width: 20%;
+        }
+
+        button{
+            background-color: rgb(226, 226, 226);
+            border: none;
+        }
+
+        button:hover{
+            opacity: 0.6;
+        }
+        button:active{
+            opacity: 1;
+        }
+        button:focus {
+            outline: 0;
+        }
+    
+    }
+    .booking-info{
+        text-align: center;
+        color: greenyellow;
+    }
+}
