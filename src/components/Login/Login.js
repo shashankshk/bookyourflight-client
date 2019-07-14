@@ -18,7 +18,6 @@ class Login extends Component {
                 [key]: value
             }
         });
-        console.log(this.state)
     }
 
     onSubmit = async () => {

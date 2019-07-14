@@ -59,7 +59,6 @@ export const sortFlights = data => {
 
 export const bookFlight = data => {
     return async (dispatch, getState) => {
-        console.log(data, '[[[[[')
         const res = await axios.post('http://localhost:5000/api/book/flight', data);
         dispatch(
             {
@@ -73,7 +72,6 @@ export const bookFlight = data => {
 
 export const fetchBookings = (data) => {
     return async (dispatch, getState) => {
-        console.log(data, '[[[[[')
         const res = await axios.post('http://localhost:5000/api/my-bookings', data);
         dispatch(
             {

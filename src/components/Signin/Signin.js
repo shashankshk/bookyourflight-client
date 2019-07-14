@@ -17,11 +17,9 @@ class Signin extends Component {
                 [key]: value
             }
         });
-        console.log(this.state)
     }
 
     onSubmit = async () => {
-        console.log('called')
         if(this.state.user){
             this.props.signInAction(this.state.user);
         }
