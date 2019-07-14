@@ -12,7 +12,6 @@ class FlightTable extends Component {
         this.setState({sort: value});
     }
     bookFlight = async (e) => {
-        console.log(e.target.id);
         const flight = this.props.flights[e.target.id];
         const data = {
             id: flight._id,
@@ -28,7 +27,6 @@ class FlightTable extends Component {
     }
     sort = async () => {
         const {sort} = this.state;
-        console.log(sort);
         const sortedFlights = JSON.parse(JSON.stringify(this.props.flights)).sort((a,b) =>{
             if(sort ==='duration' || sort ==='price'){
                 return a[sort] -b[sort]
